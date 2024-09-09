@@ -67,8 +67,9 @@
     </style>
   </head>
   <body>
-    <div class="resume">
+    <div class="resume" id="resume">
       <header>
+        <button onclick="printPDF();" style="float: right;">Download as PDF</button>
         <h1>Tom Macdonald</h1>
         <p>
           Email: tm@thomas-macdonald.com | Phone: +436641188771 | Website:
@@ -268,4 +269,17 @@
       </section>
     </div>
   </body>
+  <script src="html2pdf.bundle.min.js"></script>
+  <script type="">
+    function printPDF() {
+      var element = document.getElementById('resume');
+      html2pdf().set({
+        orientation: 'p',
+        unit: 'mm',
+        format: 'a4',
+        margin: [10, 10, 10, 10], //top, left, bottom, right
+        filename: 'resume-thomas-macdonald-cto.pdf',
+      }).from(element).save();
+    }
+  </script>
 </html>
