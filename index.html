@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,284 +6,429 @@
     <title>Resume - Tom Macdonald</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Arial", sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f7f7f7;
+        background-color: #fff;
+        color: #333;
+        line-height: 1.5;
       }
 
       .resume {
-        max-width: 600px;
+        width: 100%;
+        max-width: 800px;
         margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+
+      header {
+        border-bottom: 2px solid #333;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        padding-top: 20px;
       }
 
       header h1 {
-        font-size: 28px;
-        margin: 10px 0;
-        color: #333;
+        font-size: 32px;
+        margin: 0 0 10px 0;
+        color: #222;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
 
       header p {
-        font-size: 16px;
+        font-size: 14px;
         margin: 5px 0;
-        color: #666;
+        color: #555;
       }
 
-      h2 {
-        font-size: 22px;
-        margin: 15px 0;
-        color: #333;
+      h2.section-title {
+        font-size: 18px;
+        margin: 25px 0 15px 0;
+        color: #222;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
       }
 
-      ul {
-        list-style-type: disc;
-        margin-left: 20px;
+      h3 {
+        font-size: 16px;
+        margin: 0 0 5px 0;
+        color: #000;
+        font-weight: bold;
+      }
+
+      /* EXECUTIVE SKILLS GRID */
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 10px;
+        page-break-inside: avoid;
+      }
+
+      .skill-column {
+        flex: 1;
+        min-width: 200px;
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #eee;
+      }
+
+      .skill-column h3 {
+        font-size: 15px;
+        color: #0056b3;
         margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
       }
 
-      li {
+      .skill-column ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      .skill-column li {
         margin-bottom: 5px;
+        font-size: 13px;
+        padding-left: 0;
+      }
+
+      .job {
+        margin-bottom: 20px;
+        page-break-inside: avoid;
+      }
+
+      .job p {
+        margin: 3px 0;
+        font-size: 14px;
       }
 
       .job p span.date {
-        font-style: italic;
+        float: right;
+        font-weight: normal;
+        color: #666;
       }
 
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 24px;
+      .job p::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      ul.job-list {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        padding-left: 20px;
+      }
+
+      ul.job-list li {
+        margin-bottom: 3px;
+        font-size: 14px;
+      }
+
+      a {
+        color: #0056b3;
+        text-decoration: none;
+      }
+
+      .download-btn {
+        float: right;
+        margin-bottom: 10px;
+        padding: 8px 15px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .download-btn:hover {
+        background-color: #555;
+      }
+
+      @media print {
+        .download-btn {
+          display: none !important;
         }
-        header p {
-          font-size: 14px;
+        .resume {
+          width: 100%;
+          margin: 0;
+          padding: 0;
         }
-        h2 {
-          font-size: 20px;
+        .skill-column {
+          border: 1px solid #ccc;
         }
       }
     </style>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HD27Z5XW8"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1HD27Z5XW8"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-1HD27Z5XW8');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-1HD27Z5XW8");
     </script>
   </head>
   <body>
     <div class="resume" id="resume">
       <header>
-        <button onclick="printPDF();" style="float: right;">Download as PDF</button>
+        <button
+          onclick="printPDF();"
+          class="download-btn"
+          data-html2canvas-ignore="true"
+        >
+          Download as PDF
+        </button>
         <h1>Tom Macdonald</h1>
+        <p>Email: tm@thomas-macdonald.com | Phone: +436641188771</p>
         <p>
-          Email: tm@thomas-macdonald.com | Phone: +436641188771 | Website:
+          Website:
           <a href="https://www.thomas-macdonald.com"
             >www.thomas-macdonald.com</a
           >
           | Location: Vienna, Austria
         </p>
       </header>
+
       <section class="summary">
         <h2 class="section-title">Summary</h2>
-        <p>
-          Results-oriented Technology Leader and Digital Infrastructure Consultant with over 15 years of
-          experience. <br />
-          Excels in strategic planning, team leading, and building
-          robust technological infrastructures. <br />
-          Passionate about leveraging Kubernetes and AI technologies to level up engineering teams and solve complex business challenges.
+        <p style="font-size: 14px">
+          Results-oriented Technology Leader and Digital Infrastructure
+          Consultant with over 15 years of experience. Excels in strategic
+          planning, team leadership, and building robust technological
+          infrastructures. Passionate about leveraging Kubernetes and AI
+          technologies to level up engineering teams and solve complex business
+          challenges.
         </p>
       </section>
+
+      <section class="skills">
+        <h2 class="section-title">Executive Core Competencies</h2>
+        <div class="skills-grid">
+          <div class="skill-column">
+            <h3>Strategic Leadership</h3>
+            <ul>
+              <li>• Technical Strategy & Vision</li>
+              <li>• Team Building & Mentoring</li>
+              <li>• Agile & Scrum Transformation</li>
+              <li>• Product Innovation & Roadmap</li>
+            </ul>
+          </div>
+          <div class="skill-column">
+            <h3>Infrastructure & DevOps</h3>
+            <ul>
+              <li>• Kubernetes & Cloud Native</li>
+              <li>• High-Performance Architecture</li>
+              <li>• System Scalability & Security</li>
+              <li>• DevOps Modernization</li>
+            </ul>
+          </div>
+          <div class="skill-column">
+            <h3>AI & Development</h3>
+            <ul>
+              <li>• AI Integration & LLM Workflows</li>
+              <li>• Full Stack Architecture</li>
+              <li>• Technical Due Diligence</li>
+              <li>• Multimedia & Video Tech</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="experience">
         <h2 class="section-title">Experience</h2>
 
         <div class="job">
           <h3>Digital Infrastructure Consultant</h3>
-          <p>Vienna, Austria | <span class="date">February 2025 - current</span></p>
           <p>
-            <strong>DevOps and AI Consulting</strong>
+            Vienna, Austria <span class="date">February 2025 - Current</span>
           </p>
-          <ul>
-            <li>Empowering engineering teams by leveling up their skills in Kubernetes and modern infrastructure practices.</li>
-            <li>Consulting on the implementation and possibilities of AI in the workplace to enhance productivity.</li>
-            <li>Architecting and building AI-ready websites and applications.</li>
+          <p><strong>DevOps and AI Consulting</strong></p>
+          <ul class="job-list">
+            <li>
+              Empowering engineering teams by leveling up their skills in
+              Kubernetes and modern infrastructure practices.
+            </li>
+            <li>
+              Consulting on the implementation and possibilities of AI in the
+              workplace to enhance productivity.
+            </li>
+            <li>
+              Architecting and building AI-ready websites and applications.
+            </li>
           </ul>
         </div>
 
         <div class="job">
           <h3>CTO</h3>
-          <p>qibri GmbH, Vienna, Austria | <span class="date">April 2024 - January 2025</span></p>
           <p>
-            <strong>Pre-seed startup CTO</strong>
+            qibri GmbH, Vienna, Austria
+            <span class="date">April 2024 - January 2025</span>
           </p>
-          <ul>
-            <li>Technical vision and strategy:
-              <ul>
-                <li>Sales strategy input</li>
-                <li>Product ideation</li>
-              </ul>
+          <p><strong>Pre-seed startup CTO</strong></p>
+          <ul class="job-list">
+            <li>
+              Technical vision and strategy: Sales strategy input, Product
+              ideation.
             </li>
-            <li>Product development:
-              <ul>
-                <li>Spearheaded AI integration</li>
-                <li>Usage monitoring and reports</li>
-                <li>Reestablished test and backup functionality</li>
-              </ul>
+            <li>
+              Product development: Spearheaded AI integration, usage monitoring,
+              and reestablished test/backup functionality.
             </li>
-            <li>Team leadership:
-              <ul>
-                <li>Mentoring</li>
-                <li>Removing blockers, tie-breaking decisions</li>
-                <li>Testing discipline</li>
-              </ul>
+            <li>
+              Team leadership: Mentoring, removing blockers, tie-breaking
+              decisions, and enforcing testing discipline.
             </li>
-            <li>Innovation:
-              <ul>
-                <li>AI research</li>
-              </ul>
-            </li>
+            <li>Innovation: AI research and integration.</li>
           </ul>
         </div>
+
+        <div class="job">
+          <h3>Contract Development</h3>
+          <p>
+            with Bolldorf OG, Vienna, Austria
+            <span class="date">May 2024 - Current</span>
+          </p>
+          <p>
+            <strong
+              >Custom development of an online tourism ecommerce
+              application</strong
+            >
+          </p>
+        </div>
+
         <div class="job">
           <h3>Tech Lead</h3>
-          <p>Bitmovin GmbH, Vienna, Austria | <span class="date">June 2022 - March 2024</span></p>
+          <p>
+            Bitmovin GmbH, Vienna, Austria
+            <span class="date">June 2022 - March 2024</span>
+          </p>
           <p>
             <strong
               >Initiated, designed and built a stable, extensible and
               high-performance Web player</strong
             >
           </p>
-          <ul>
+          <ul class="job-list">
             <li>
-              Based on internal metrics and my own market analysis, I realized the need
-              for a complementary approach to Player Technology. I launched the project, led
-              design and development, and worked in tandem with Product on
-              getting it to market.<br />
-              See: <a href="https://www.npmjs.com/package/@bitmovin/player-web-x">https://www.npmjs.com/package/@bitmovin/player-web-x</a>
+              Realized the need for a complementary approach to Player
+              Technology based on market analysis. Launched the project, led
+              design and development, and worked with Product to bring it to
+              market.
+              <br /><em>See: npmjs.com/package/@bitmovin/player-web-x</em>
             </li>
-            <li>Redesigned the licencing backend for scale</li>
+            <li>Redesigned the licensing backend for scale.</li>
           </ul>
         </div>
+
         <div class="job">
           <h3>Engineering Manager</h3>
-          <p>Bitmovin GmbH, Vienna, Austria | <span class="date">February 2019 - May 2022</span></p>
           <p>
-            <strong
-              >Oversaw development of the HTML5 web player</strong>
+            Bitmovin GmbH, Vienna, Austria
+            <span class="date">February 2019 - May 2022</span>
           </p>
-          <ul>
+          <p><strong>Oversaw development of the HTML5 web player</strong></p>
+          <ul class="job-list">
             <li>
-              Led a team of 15 engineers in cooperation with upper management,
-              as well as the Product and Customer Success departments to
-              maintain, develop and deliver a Web Player serving ~2B views per
+              Led a team of 15 engineers, collaborating with Product and
+              Customer Success to deliver a Web Player serving ~2B views per
               month.
             </li>
             <li>
               Implemented agile methodologies, accelerating product development
-              cycles by 50% and improving team collaboration.
+              cycles by 50% and improving collaboration.
             </li>
             <li>
-              Responsible for 90% of the best engineering hires in the team.
+              Responsible for 90% of the best engineering hires in the team and
+              technical roadmap input.
             </li>
-            <li>Responsible for technical roadmap input.</li>
           </ul>
         </div>
+
         <div class="job">
           <h3>Technical Advisor | Architect</h3>
-          <p>Eldora.do, Switzerland | <span class="date">June 2022 - April 2023</span></p>
-
-          <h4>Web3 Metaverse</h4>
-
-          <ul>
+          <p>
+            Eldora.do, Switzerland
+            <span class="date">June 2022 - April 2023</span>
+          </p>
+          <p><strong>Web3 Metaverse</strong></p>
+          <ul class="job-list">
             <li>Defined technical strategy with the executive team.</li>
-            <li>Educated contributors on agile methodologies</li>
-            <li>Overall system architecture and technology selection</li>
+            <li>Educated contributors on agile methodologies.</li>
+            <li>
+              Managed overall system architecture and technology selection.
+            </li>
           </ul>
         </div>
+
         <div class="job">
           <h3>Lead Engineer</h3>
-          <p>Yelster GmbH, Vienna, Austria | <span class="date">Dec 2016 - Jan 2019</span></p>
+          <p>
+            Yelster GmbH, Vienna, Austria
+            <span class="date">Dec 2016 - Jan 2019</span>
+          </p>
           <p>
             <strong
               >Maintained and enhanced one of the largest Wordpress
               installations worldwide (~7k websites)</strong
             >
           </p>
-          <ul>
+          <ul class="job-list">
+            <li>Led a diverse, cross-technology team of 7 engineers.</li>
             <li>
-              Led a diverse and cross-technology team of 7 engineers of mixed
-              experience
-            </li>
-            <li>Supported a team of ~100 webmasters</li>
-            <li>
-              Maintained and extended a number of helper services in a SOA
-              layout
+              Supported a team of ~100 webmasters and maintained helper services
+              in a SOA layout.
             </li>
             <li>
-              Dropped web server ram usage by 99.995% using a custom reverse
-              proxy
+              Dropped web server RAM usage by 99.995% using a custom reverse
+              proxy.
             </li>
           </ul>
         </div>
-        <div class="job"><span class="date">
-          <h3>Freelance Software Consultant <span class="date">2012 -</span></h3>
-          <p>
-            <strong
-              >Developed a number of software projects, mostly web facing, some
-              mobile</strong
-            >
-          </p>
-          <p>Customer-oriented approach</p>
-          <p>Using innovation where appropriate to save costs</p>
-        </div>
 
-        </section>
+        <div class="job">
+          <h3>Freelance Software Consultant</h3>
+          <p>Self-employed <span class="date">2012 - Present</span></p>
+          <ul class="job-list">
+            <li>Developed multiple software projects (web and mobile).</li>
+            <li>Customer-oriented approach using innovation to save costs.</li>
+          </ul>
+        </div>
+      </section>
+
       <section class="education">
         <h2 class="section-title">Education</h2>
-        <div class="degree">
+        <div class="job">
           <h3>Master of Science in Computer Science</h3>
-          <p>Université de Nantes, France | 2009</p>
+          <p>Université de Nantes, France <span class="date">2009</span></p>
         </div>
-        </section>
-      <section class="skills">
-        <h2>Skills</h2>
-        <ul>
-          <li>Strategic Planning and Execution</li>
-          <li>Kubernetes & DevOps</li>
-          <li>AI Integration & LLM workflows</li>
-          <li>Team Leadership and Development</li>
-          <li>Product Innovation and Development</li>
-          <li>Agile and Scrum Methodologies</li>
-          <li>Full Stack Development (PHP, TS, Golang, Python, Clojure(script)), SQL</li>
-          <li>Deep knowledge of multimedia browser APIs</li>
-        </ul>
       </section>
+
       <section class="references">
-        <div>
-          <h2>Writings</h2>
-          <h3>Player Web X</h3>
-          <ul>
+        <h2 class="section-title">Writings</h2>
+        <div class="job">
+          <h3>Bitmovin Blog</h3>
+          <ul class="job-list">
             <li>
               <a
                 href="https://bitmovin.com/structured-concurrency-matters-developers/"
-                >Blog post introducing structured concurrency</a
+                >Blog post: Structured Concurrency for Developers</a
               >
             </li>
             <li>
               <a
                 href="https://bitmovin.com/developing-video-player-with-structured-concurrency/"
-                >Blog post about structured concurrency as applied to video
-                players</a
+                >Blog post: Structured Concurrency in Video Players</a
               >
-            </li>
-          </ul>
-          <h3>Eldora.do</h3>
-          <ul>
-            <li>
-              <a href="metaverse.html">The Metaverse is already here</a>
             </li>
           </ul>
         </div>
@@ -291,16 +436,19 @@
     </div>
   </body>
   <script src="html2pdf.bundle.min.js"></script>
-  <script type="">
+  <script>
     function printPDF() {
-      var element = document.getElementById('resume');
-      html2pdf().set({
-        orientation: 'p',
-        unit: 'mm',
-        format: 'a4',
-        margin: [10, 10, 10, 10], //top, left, bottom, right
-        filename: 'resume-thomas-macdonald-digital-infrastructure.pdf',
-      }).from(element).save();
+      var element = document.getElementById("resume");
+      var opt = {
+        margin: [10, 15, 10, 15],
+        filename: "resume-thomas-macdonald.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+      };
+
+      html2pdf().set(opt).from(element).save();
     }
   </script>
 </html>
