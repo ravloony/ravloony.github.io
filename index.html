@@ -152,6 +152,10 @@
       background-color: #555;
     }
 
+    @page {
+      margin: 12mm 14mm;
+    }
+
     @media print {
       .download-btn {
         display: none !important;
@@ -165,6 +169,20 @@
 
       .skill-column {
         border: 1px solid #ccc;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      header,
+      .job,
+      .skills-grid {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      h2.section-title {
+        page-break-after: avoid;
+        break-after: avoid;
       }
     }
   </style>
@@ -182,7 +200,7 @@
 <body>
   <div class="resume" id="resume">
     <header>
-      <button onclick="printPDF();" class="download-btn" data-html2canvas-ignore="true">
+      <button onclick="window.print();" class="download-btn" data-html2canvas-ignore="true">
         Download as PDF
       </button>
       <h1>Tom Macdonald</h1>
@@ -197,12 +215,12 @@
     <section class="summary">
       <h2 class="section-title">Summary</h2>
       <p style="font-size: 14px">
-        Results-oriented Technology Leader and Digital Infrastructure Consultant with over 15 years of experience
-        building highly scalable streaming solutions and modern architecture. Proven track record of scaling
-        cross-functional teams and acting as a strategic coach to develop technical leaders, fostering aligned autonomy
-        and setting outcome-based goals. Passionate about boosting engineering productivity by driving the adoption of
-        AI-powered development tools and agentic coding practices. Brings strong data awareness and a firm delivery
-        mindset to successfully balance roadmap execution with functional excellence.
+        Technology leader and digital infrastructure consultant with over 15 years of experience translating business
+        strategy into scalable, commercially valuable products and platforms. Career spans hands-on engineering
+        through CTO, leading engineering, architecture, and DevOps organizations in streaming, cloud-native, and
+        distributed-systems environments. Modernizes development processes with AI-enabled workflows and agentic
+        coding practices, and builds strong engineering cultures through data-driven decisions, firm governance of
+        security, reliability, and technical debt, and the development of technical leaders.
       </p>
     </section>
 
@@ -212,28 +230,28 @@
         <div class="skill-column">
           <h3>Strategic Leadership</h3>
           <ul>
-            <li>• Technical Strategy & Vision</li>
-            <li>• Team Building & Mentoring</li>
-            <li>• Agile & Scrum Transformation</li>
-            <li>• Product Innovation & Roadmap</li>
+            <li>• Technology Strategy & Vision</li>
+            <li>• Org Design, Hiring & Mentoring</li>
+            <li>• Agile & Delivery Transformation</li>
+            <li>• Product & Roadmap Ownership</li>
           </ul>
         </div>
         <div class="skill-column">
           <h3>Infrastructure & DevOps</h3>
           <ul>
             <li>• Kubernetes & Cloud Native</li>
-            <li>• High-Performance Architecture</li>
-            <li>• System Scalability & Security</li>
-            <li>• DevOps Modernization</li>
+            <li>• Distributed Systems & Scalability</li>
+            <li>• Security, Reliability & Governance</li>
+            <li>• DevOps & Platform Engineering</li>
           </ul>
         </div>
         <div class="skill-column">
           <h3>AI & Development</h3>
           <ul>
+            <li>• AI-Enabled Development & LLM Workflows</li>
             <li>• Multimedia & Video Tech</li>
-            <li>• AI Integration & LLM Workflows</li>
             <li>• Full Stack Architecture</li>
-            <li>• Technical Due Diligence</li>
+            <li>• M&A Technical Due Diligence</li>
           </ul>
         </div>
       </div>
@@ -250,20 +268,16 @@
         <p><strong>DevOps and AI Consulting</strong></p>
         <ul class="job-list">
           <li>
-            Coach and advise client engineering leaders on team management, structuring workflows to foster aligned
-            autonomy and accelerate delivery.
+            Coach client engineering leaders on team topology, workflow design, and delivery acceleration.
           </li>
           <li>
-            Empowering engineering teams by leveling up their skills in
-            Kubernetes, mapping domains, and fostering agentic coding practices.
+            Level up client teams on Kubernetes, domain-driven architecture, and agentic coding practices.
           </li>
           <li>
-            Implementing LLM workflows that drive the adoption of AI-powered
-            development tools to boost engineering productivity and innovation.
+            Introduce LLM-assisted development workflows and AI-powered tooling that boost engineering productivity.
           </li>
           <li>
-            Architecting and building scalable, AI-ready solutions tailored
-            to business customers.
+            Architect and deliver scalable, AI-ready platforms tailored to business customers.
           </li>
         </ul>
       </div>
@@ -277,19 +291,18 @@
         <p><strong>Pre-seed startup CTO</strong></p>
         <ul class="job-list">
           <li>
-            Technical vision and strategy: Led product ideation and structured
-            teams to manage engineering capacity efficiently across initiatives.
+            Technical vision and strategy: Led product ideation and structured engineering capacity efficiently
+            across initiatives.
           </li>
           <li>
-            Fostered agentic coding practices: Implemented LLM workflows driving
-            the adoption of AI-powered development tools, boosting engineering
-            productivity and innovation.
+            Agentic coding: Introduced LLM workflows and AI-powered development tools across the engineering
+            organization, accelerating delivery.
           </li>
           <li>
-            Team leadership: Mentored emerging technical leaders, fostering
-            aligned autonomy and setting outcome-based goals to resolve blockers.
+            Team leadership: Mentored emerging technical leaders and established outcome-based goal setting to
+            resolve delivery blockers.
           </li>
-          <li>Innovation: AI research and integration.</li>
+          <li>Innovation: Drove AI research and integration into the product roadmap.</li>
         </ul>
       </div>
 
@@ -312,12 +325,10 @@
             <br /><em>See: npmjs.com/package/@bitmovin/player-web-x</em>
           </li>
           <li>
-            Redesigned the licensing backend as a scalable product solution
-            built for enterprise business customers.
+            Redesigned the licensing backend as a scalable, enterprise-ready product platform.
           </li>
           <li>
-            Championed strong data awareness, utilizing metrics and dashboards to make decisions from evidence rather
-            than opinions
+            Instituted metrics- and dashboard-driven decision making, replacing opinion with evidence.
           </li>
         </ul>
       </div>
@@ -335,16 +346,16 @@
             to support up to 15 engineers across 2 teams.
           </li>
           <li>
-            Fostered aligned autonomy by setting outcome-based goals, delivering
-            a scalable Web Player serving ~2B views per month.
+            Delivered a scalable Web Player serving ~2B views per month by setting
+            outcome-based goals across teams.
           </li>
           <li>
             Implemented agile methodologies to maintain a predictable release cadence,
             accelerating product development cycles by 50%.
           </li>
           <li>
-            Responsible for 90% of the best engineering hires in the team and
-            technical roadmap input.
+            Owned recruiting and technical roadmap input, responsible for 90% of the
+            team's best engineering hires.
           </li>
         </ul>
       </div>
@@ -355,7 +366,7 @@
           Eldora.do, Switzerland
           <span class="date">June 2022 - April 2023</span>
         </p>
-        <p><strong>Web3 Metaverse</strong></p>
+        <p><strong>Web3 Metaverse — part-time advisory alongside Bitmovin role</strong></p>
         <ul class="job-list">
           <li>Defined technical strategy with the executive team.</li>
           <li>Educated contributors on agile methodologies.</li>
@@ -385,15 +396,15 @@
             in a scalable SOA layout.
           </li>
           <li>
-            Dropped web server RAM usage by 99.995% with a custom reverse proxy
-            overhaul, balancing roadmap delivery with tech debt reduction.
+            Dropped web server RAM usage from ~20 GB to ~3 MB with a custom reverse
+            proxy overhaul, balancing roadmap delivery with tech debt reduction.
           </li>
         </ul>
       </div>
 
       <div class="job">
         <h3>Freelance Software Consultant</h3>
-        <p>Self-employed <span class="date">2012 - Present</span></p>
+        <p>Self-employed <span class="date">2012 - Present (alongside full-time roles)</span></p>
         <ul class="job-list">
           <li>Developed multiple software projects (web and mobile).</li>
           <li>Customer-oriented approach using innovation to save costs.</li>
@@ -427,20 +438,5 @@
     </section>
   </div>
 </body>
-<script src="html2pdf.bundle.min.js"></script>
-<script>
-  function printPDF() {
-    var element = document.getElementById("resume");
-    var opt = {
-      margin: [10, 15, 10, 15],
-      filename: "resume-thomas-macdonald.pdf",
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-      pagebreak: { mode: ["avoid-all", "css", "legacy"] },
-    };
-    html2pdf().set(opt).from(element).save();
-  }
-</script>
 
 </html>
